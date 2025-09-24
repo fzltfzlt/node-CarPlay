@@ -26,7 +26,7 @@ export default class NodeMicrophone extends EventEmitter {
   }
 
   start() {
-    console.debug('starting mic')
+    console.info('starting mic')
     this._mic.startRecording()
     this._active = true
     this._timeout = setTimeout(() => {

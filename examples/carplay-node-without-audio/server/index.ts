@@ -59,7 +59,7 @@ async function main() {
         message = JSON.parse(chunk.toString('utf8'))
       } catch (_) {
         // Ignore malformed messages
-        console.debug('Malformed message', message)
+        console.info('Malformed message', message)
         return
       }
 

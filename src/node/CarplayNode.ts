@@ -137,7 +137,7 @@ export default class CarplayNode {
       await initialise(device)
       await start(this._config)
       this._pairTimeout = setTimeout(() => {
-        console.debug('no device, sending pair')
+        console.info('no device, sending pair')
         send(new SendCommand('wifiPair'))
       }, 15000)
       initialised = true

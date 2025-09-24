@@ -87,7 +87,7 @@ export class RenderWorker {
     if (event.reportFps) {
       setInterval(() => {
         if (this.decoder.state === 'configured') {
-          console.debug(`FPS: ${this.fps}`)
+          console.info(`FPS: ${this.fps}`)
         }
       }, 5000)
     }

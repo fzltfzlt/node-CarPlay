@@ -121,14 +121,14 @@ export default class CarplayWeb {
     if (this._started) return
     const { initialise, start, send } = this.dongleDriver
 
-    console.debug('opening device')
+    console.info('opening device')
     await usbDevice.open()
-    await usbDevice.reset()
+    // await usbDevice.reset()
 
     await initialise(usbDevice)
     await start(this._config)
     this._pairTimeout = setTimeout(() => {
-      console.debug('no device, sending pair')
+      console.info('no device, sending pair')
       send(new SendCommand('wifiPair'))
     }, 15000)
     this._started = true

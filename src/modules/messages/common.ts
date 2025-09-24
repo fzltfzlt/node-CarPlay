@@ -174,7 +174,7 @@ export class MessageHeader {
         case MessageType.Phase:
           return new Phase(this, data)
         default:
-          console.debug(
+          console.info(
             `Unknown message type: ${type}, data: ${data.toString()}`,
           )
           return null
@@ -184,7 +184,7 @@ export class MessageHeader {
         case MessageType.Unplugged:
           return new Unplugged(this)
         default:
-          console.debug(`Unknown message type without data: ${type}`)
+          console.info(`Unknown message type without data: ${type}`)
           return null
       }
     }

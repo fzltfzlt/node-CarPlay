@@ -101,7 +101,7 @@ export class DongleDriver extends EventEmitter {
     try {
       this._device = device
 
-      console.debug('initializing')
+      console.info('initializing')
       if (!device.opened) {
         throw new DriverStateError('Illegal state - device not opened')
       }
@@ -113,7 +113,7 @@ export class DongleDriver extends EventEmitter {
         )
       }
 
-      console.debug('getting interface')
+      console.info('getting interface')
       const {
         interfaceNumber,
         alternate: { endpoints },
@@ -132,10 +132,10 @@ export class DongleDriver extends EventEmitter {
       this._inEP = inEndpoint
       this._outEP = outEndpoint
 
-      console.debug('claiming')
+      console.info('claiming')
       await this._device.claimInterface(interfaceNumber)
 
-      console.debug(this._device)
+      console.info(this._device)
     } catch (err) {
       this.close()
       throw err

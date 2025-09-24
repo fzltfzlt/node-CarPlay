@@ -125,7 +125,7 @@ export class Plugged extends Message {
     if (wifiAvail) {
       this.phoneType = data.readUInt32LE(0)
       this.wifi = data.readUInt32LE(4)
-      console.debug(
+      console.info(
         'wifi avail, phone type: ',
         PhoneType[this.phoneType],
         ' wifi: ',
@@ -133,7 +133,7 @@ export class Plugged extends Message {
       )
     } else {
       this.phoneType = data.readUInt32LE(0)
-      console.debug('no wifi avail, phone type: ', PhoneType[this.phoneType])
+      console.info('no wifi avail, phone type: ', PhoneType[this.phoneType])
     }
   }
 }
